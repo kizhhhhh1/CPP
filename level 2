@@ -1,0 +1,112 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Programming {
+public:
+    // Constructor
+    Programming(const string& language = "programming languages") {
+        cout << "I love " << language << endl;
+    }
+};
+
+int main() {
+    // Creating objects of Programming class with different arguments
+    Programming obj1;       // Output: "I love programming languages"
+    Programming obj2("cpp"); // Output: "I love cpp"
+    Programming obj3("Java"); // Output: "I love Java"
+
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+// Function to count vowels and consonants
+void countVowelsAndConsonants(const char* str, int& vowels, int& consonants) {
+    vowels = 0;
+    consonants = 0;
+
+    while (*str) {
+        char ch = *str;
+        // Check if character is an alphabet
+        if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+            // Convert character to lowercase
+            ch = tolower(ch);
+            // Check if character is a vowel
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                vowels++;
+            } else {
+                consonants++;
+            }
+        }
+        // Move to the next character
+        str++;
+    }
+}
+
+int main() {
+    char str[100];
+    int vowels, consonants;
+
+    // Input a string
+    cout << "Input a string: ";
+    cin.getline(str, 100);
+
+    // Count vowels and consonants
+    countVowelsAndConsonants(str, vowels, consonants);
+
+    // Output the result
+    cout << "Number of vowels: " << vowels << endl;
+    cout << "Number of consonants: " << consonants << endl;
+
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+int footballPoints(int wins, int draws, int losses) {
+    return wins * 3 + draws * 1;
+}
+
+int main() {
+    // Test cases
+    cout << "footballPoints(3, 4, 2): " << footballPoints(3, 4, 2) << endl; // Output: 13
+    cout << "footballPoints(5, 0, 2): " << footballPoints(5, 0, 2) << endl; // Output: 15
+    cout << "footballPoints(0, 0, 1): " << footballPoints(0, 0, 1) << endl; // Output: 0
+
+    return 0;
+}
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Car {
+private:
+    string brand;
+public:
+    // Constructor to initialize brand with "Ford"
+    Car() : brand("Ford") {}
+
+    string getBrand() const { return brand; }
+};
+
+int main() {
+    // Create an object of the Car class
+    Car car;
+
+    // Call getBrand() method and store the value in a variable
+    string brand = car.getBrand();
+
+    // Print the value of the brand
+    cout << "Brand of the car: " << brand << endl;
+
+    return 0;
+}
+
